@@ -29,4 +29,30 @@ connectionDetails <- DatabaseConnector::createConnectionDetails(
   user = "username",
   password = "password"
 )
+
+databaseSettings <- RiskStratifiedEstimation::createDatabaseSettings(
+  databaseName = "mdcd",
+  cdmDatabaseSchema = "cdm_mdcd",
+  cohortDatabaseSchema = "scratch",
+  outcomeDatabaseSchema = "scratch",
+  resultsDatabaseSchema = "scratch",
+  exposureDatabaseSchema = "scratch",
+  cohortTable = "legend_hypertension_exp_cohort",
+  outcomeTable = "legend_hypertension_out_cohort",
+  exposureTable = "legend_hypertension_exp_cohort",
+  mergedCohortTable = "legend_hypertension_merged"
+)
 ```
+- Finally, execute the analysis for a single database with:
+```r
+execute(
+  connectionDetails = connectionDetails,
+  analysisId = "mdcd_analysis",
+  databaseSettings = databaseSettings
+)
+```
+
+Following these instructions will run the analysis on one database (mdcd) and
+will store the results inside the directory named `results`. To generate
+results on other databases we need to redefine the `connectionDetails` and the
+`databaseSettings` and rerun the `execute(...)` function.
