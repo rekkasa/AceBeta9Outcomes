@@ -152,14 +152,14 @@ execute <- function(
   cohortDatabaseSchema <- databaseSettings$cohortDatabaseSchema
   outputFolder <- analysisSettings$saveDirectory
 
-  # generateAllCohorts(
-  #   connectionDetails = connectionDetails,
-  #   cdmDatabaseSchema = cdmDatabaseSchema,
-  #   cohortDatabaseSchema = cohortDatabaseSchema,
-  #   oracleTempSchema = oracleTempSchema,
-  #   indicationId = "Hypertension",
-  #   outputFolder = outputFolder
-  # )
+  generateAllCohorts(
+    connectionDetails = connectionDetails,
+    cdmDatabaseSchema = cdmDatabaseSchema,
+    cohortDatabaseSchema = cohortDatabaseSchema,
+    oracleTempSchema = oracleTempSchema,
+    indicationId = "Hypertension",
+    outputFolder = outputFolder
+  )
 
   RiskStratifiedEstimation::runRiskStratifiedEstimation(
     connectionDetails = connectionDetails,
