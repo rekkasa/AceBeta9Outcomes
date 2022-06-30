@@ -56,3 +56,7 @@ Following these instructions will run the analysis on one database (mdcd) and
 will store the results inside the directory named `results`. To generate
 results on other databases we need to redefine the `connectionDetails` and the
 `databaseSettings` and rerun the `execute(...)` function.
+
+## License
+
+`AceBeta9Outcomes` is licensed under the Apache License 2.0.
