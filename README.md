@@ -9,17 +9,17 @@
 
 ## How to run
 
-- Follow [these instructions](https://ohdsi.github.io/Hades/rSetup.html) on setting up your R environment.
-- Clone the repository.
-- Open the package in RStudio and install all dependencies with:
+1. Follow [these instructions](https://ohdsi.github.io/Hades/rSetup.html) on setting up your R environment.
+2. Clone the repository.
+3. Open the package in RStudio and install all dependencies with:
 
 ```r
 install.packages("renv")
 renv::activate()
 renv::restore()
 ```
-- Build the package in RStudio selecting `Build > Install and restart`. This will install the `AceBeta9Outcomes` package
-- Once installed you need to define your connection details to the database and the database settings:
+4. Build the package in RStudio selecting `Build > Install and restart`. This will install the `AceBeta9Outcomes` package
+5. Once installed you need to define your connection details to the database and the database settings:
 ```r
 library(AceBeta9Outcomes)
 
@@ -43,7 +43,7 @@ databaseSettings <- RiskStratifiedEstimation::createDatabaseSettings(
   mergedCohortTable = "legend_hypertension_merged"
 )
 ```
-- Finally, execute the analysis for a single database with:
+6. Finally, execute the analysis for a single database with:
 ```r
 execute(
   connectionDetails = connectionDetails,
